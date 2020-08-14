@@ -1,0 +1,10 @@
+p{
+    font-family: 'Tangerine', serif;
+    font-size: 18px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+div {
+    border: 2px solid gray;
+    padding: 8px;
+  }
