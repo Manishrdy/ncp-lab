@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form class="half" action="servlet/Register" method="post">
+        <fieldset style="width: 500px">
+        <legend>Sign up.</legend>
+        <label>First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="First name" required><br><br>
+        <label">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Last name" required><br><br>
+        <label">Email id:</label>
+        <input type="email" id="email" name="email" placeholder="Email id." required><br><br>
+        <label>Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password (min 8)" minlength="8" size="25" required><br><br>
+        <label>Confirm Password:</label>
+        <input type="password" id="password" name="password1" placeholder="Re Enter Password" minlength="8" required><br><br>
+        <label>User Name:</label>
+        <input type="text" id="uname" name="uname" placeholder="Username" required><br><br>
+        <label>Date of birth: (Enter date after 2000-01-01) </label>
+        <input type="date" id="date" name="date" min="2000-01-02"><br><br>
+        <label>Enter a phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required><br><br>
+        <label>Address</label>
+        <input type="text" id="address" name="address" placeholder="Max 50 chars" maxlength="50" required><br><br>
+        
+        <p>Choose your blood group</p>
+        <input type="radio" name="blood" id="O +ve" value="O +ve">
+        <label></label>O +ve</label><br>
+        <input type="radio" name="blood" id="O -ve" value="O -ve">
+        <label>O -ve</label><br>
+        <input type="radio" name="blood" id="AB -ve" value="AB -ve">
+        <label>AB -ve</label><br>
+        <input type="radio" name="blood" id="A +ve" value="A +ve">
+        <label>A</label><br>
+        <input type="radio" name="blood" id="B +ve"  value="B +ve">
+        <label>B</label><br><br>
+        <p>Have any medical emergencies, upload your files.</p>
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile" multiple><br><br>
+        <input type="checkbox" id="check" name="check" required>
+        <label> I agree to terms and conditions.</label><br><br>
+        <button type="submit" value="Submit">Submit</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&ensp;<button type="reset" value="Reset">Reset</button>
+        </fieldset>
+    </form>
+</body>
+</html>
