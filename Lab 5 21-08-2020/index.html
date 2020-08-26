@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Validation</title>
+
+    <center><h2 class="content">NCP Lab 5 JS Validation.</h2></center>
+    <style>
+        .content {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+        border: double;
+        background-color: lightblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="index.html" method="get" onsubmit="return isValidated();" class="content">
+    <label >Select your broadband plan.</label> <br>
+    <input type="radio" id="mr" name="title" value="mr">
+    <label for="mr">500 GB/month.</label><br>
+    <input type="radio" id="ms" name="title" value="ms">
+    <label for="ms">1 Tb/month.</label><br><br>
+
+    <label>Enter your Ip address &#128517;: </label>
+    <input type="text" id = "ip" name="ip">
+    <br> <br>
+
+    <label>Enter Password: </label>
+    <input type="password" id="pwd" name="pwd">
+
+    <strong>
+        <ol>
+            <li>A lower case letter.</li>
+            <li>A upper case letter.</li>
+            <li>A number.</li>
+            <li> A special character.</li>
+            <li>Min 8 - 15 characters.</li>
+        </ol>
+    </strong> <br> <br>
+
+    <label>Pick your data plan speed.</label>
+    <select id="subject">
+        <option value="">--Please choose an option--</option>
+        <option value="1">10 mbps</option> 
+        <option value="2">20 mbps</option> 
+        <option value="3">50 mbps</option> 
+        <option value="4">100 mbps</option> 
+    </select> <br><br>
+
+    <input type="checkbox" id="terms" name="terms" value="terms">
+    <label>I agree to terms and conditions.</label><br><br>
+
+    <button onClick="ValidateForm(this.form)" type="submit" value="Submit">Submit</button>
+    <button type="reset" value="Reset">Reset</button>
+
+</form>
+
+<script type="text/javascript">
+    function isValidated(){
+
+        // Validation for title's Mr / Ms.
+        var checkedMr = document.getElementById('mr').checked;
+        var checkedMs = document.getElementById('ms').checked;
+
+        //Regular Expression for checking IPv4 address.
+        var ip_regx = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        
+        //Regular Expression for checking username
+        var check_user = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+        // Check box validation.
+        var checkBox = document.getElementById('terms').checked;
+
+        // Select tag validation.
+        var res = document.getElementById("subject");
+
+        if(checkedMr == false && checkedMs == false) {
+            alert('Select your data plan.');
+            return false;
+        }
+       else {
+           if(ip.value.match(ip_regx)) {
+               if(pwd.value.match(check_user)) {
+
+                    if(res.value != ""){
+                        
+                        if(checkBox == false) {
+                        alert("You must agree to terms and conditions !");
+                        return false;
+                        }
+                        else {
+                            alert("successfully submitted !");
+                            return true;
+                        }
+                    }
+                    else {
+                        alert("Select your network speed !");
+                        return false;
+                    }
+                    
+               }
+               else {
+                   alert("Password not satisfied !");
+                   return false;
+               }
+               
+           }
+           else {
+            alert("I'm not Zuckerberg, Enter your IP !");
+            return false;
+           }
+       }
+    }
+    </script>
+
+
+</body>
+</html>
